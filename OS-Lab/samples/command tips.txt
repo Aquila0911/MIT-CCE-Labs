@@ -1,0 +1,41 @@
+LAB 1
+
+1. head, tail: -n for printing n no. of lines, -c for printing c no. of characters
+Eg: head -n 3 kira.txt, tail -c 12 kira.txt
+
+2. cp: -i to prompt before overwriting an alr existing file with same name in destination, -f to forcefully overwrite without confirmation, -n to NOT overwrite if file alr exists in destination
+Eg: cp -i kira.txt folder1, cp kira.txt folder1/newname.txt (to rename in new location)
+
+3. mv: same as cp source destination, also renames without changing locations
+Eg: mv kira.txt newkira.txt (to rename in same place)
+
+4. rm: -r to remove a directory along w its contents, -i for prompt, -f to forcefully remove
+
+5. rmdir: used to remove EMPTY directories, if directories have content we need to use -r
+
+6. find: -name to find based on name, -type to find based on type (like d for directory, f for file)
+Eg: find /d/studies -type d (all directories in studies), folder1 -type f -name "*.txt" (all .txt files in folder1)
+
+LAB 2
+
+NOTE: $ means end of line, & means placeholder, \w is equivalent to [a-zA-Z0-9_], meaning it matches uppercase and lowercase letters, digits, and the underscore _, {} for count
+
+1. grep:
+grep -E "^\w{2}$" - lines with exactly 2 characters. {2} means it checks 2 instances of \w
+grep -E "\w*\.$" - lines with a dot (.). escape sequence since dot is special char in grep.
+grep -E "\s{1,}" - lines with 1 or more spaces
+awk -F ":" '{sum=$6+$7+$8; print sum/3}' - awk is used to perform maths. -F ":" means values in a line separated by a :, script in 'quotes' prints avg
+
+2. sed:
+basics: sed -e 's/input/output(/g)' filename - changes first instance of 'input' to 'output' of first instance of a line in filename. -g does it for ALL instances in a line.
+Eg: sed -e 's/hello/KONICHIWA/g' a1.txt
+
+regexp: sed -e 's/[0-9]*/(&)/' filename - surrounds all matched pattern around brackets. & is placeholder for respective pattern.
+
+others: sed -e '/pattern/ command' filename - performs a command on the pattern. d is delete, s is search and replace, p is print, i is insert, a is append
+Eg: sed -e '/^#/ d' a1.txt - deletes all lines starting with # ; sed –i '/hello/a “xyz”' a1.txt
+
+3. tr:
+tr '[a-z]' '[A-Z]' < a1.txt - converts uppercase to lowercase.
+tr 'abcd' 'jkmn < a1.txt - maps a to j, b to k, c to m, d to n.
+-d deletes specified characters, -s compresses identical adjacent characters

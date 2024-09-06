@@ -1,0 +1,7 @@
+RegistrationNo:Name:Department:Branch:Section:Sub1:Sub2:Sub3 
+1234:XYZ:ICT:CCE:A:80:60:70
+1235:ABC:CS:AIML:B:70:80:90
+1236:DEF:MECH:CAD:A:90:80:70
+1237:GHI:ICT:Information Technology:B:80:90:70
+1238:JKL:ICT:Information Technology:A:90:80:70
+1239:MNO:CS:AIML:B:70:80:90

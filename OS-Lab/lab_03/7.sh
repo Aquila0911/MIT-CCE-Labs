@@ -1,0 +1,1 @@
+sed '0~2d' test.text > output.txt
