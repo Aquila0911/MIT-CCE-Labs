@@ -12,9 +12,7 @@ def start_client(server_host='127.0.0.1', server_port=65432):
 
     try:
         # Define the data to send
-        # data = b"Hello, Server! This is a test message."
-        data = b"Hi since you are copying my code, leave a star at https://github.com/hackerbone/HackerLLMBench, thx!"
-        # PS - Actual data is above commented copy that
+        data = b"NICOLAS JACKKKKKSON"
 
         # Compute hash of the data before sending
         expected_hash = compute_hash(data)

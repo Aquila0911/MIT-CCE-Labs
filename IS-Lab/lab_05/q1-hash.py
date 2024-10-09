@@ -13,6 +13,7 @@ def hash_function(input_string):
     return hash_value
 
 # Example usage
-input_string = "doner kabab nacho, alejandro garnacho"
+string = "doner kabab nacho, alejandro garnacho"
 
-print(f"Hash value: {hash_function(input_string)}")
+print(f"Hash value (decimal): {hash_function(string)}")
+print(f"Hash value (hex): {hash_function(string):08x}")
