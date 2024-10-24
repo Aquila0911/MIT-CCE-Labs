@@ -23,9 +23,11 @@ def schnorr_verify(message, signature, public_key):
 
 
 # Example usage
-message = "NICOLAS JACKKKKKKSON"
+# message = "NICOLAS JACKKKKKKSON"
+message = input("Enter message: ")
 signature = schnorr_sign(message, private_key)
-is_valid = schnorr_verify(message, signature, public_key)
+new_msg = input("Enter new message: ")
+is_valid = schnorr_verify(new_msg, signature, public_key)
 
 print("Message:", message)
 print("Signature:", signature.hex())

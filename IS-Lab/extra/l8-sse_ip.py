@@ -3,24 +3,10 @@ from Crypto.Cipher import AES
 from Crypto.Util.Padding import pad, unpad
 from collections import defaultdict
 
-# 1a. Generate text corpus
-documents = [
-    "doner kabab nacho, alejandro garnacho",
-    "neymar timer skibidi cole palmer",
-    "megaphone telephone gianluigi buffon",
-    "barella nutella cucurella",
-    "griddy grimaldo skibidi ronaldo",
-    "pickford blackford skibidi rashford",
-    "nike bike skibidi van dijk",
-    "i think sometime in the life i am too competitive",
-]
-
-
 # 1b. Encryption & Decryption functions using AES
 def get_aes_key():
     """Generate a random AES key."""
     return hashlib.sha256(b"supersecretkey").digest()
-
 
 def encrypt(text, key):
     """Encrypt text using AES."""
@@ -28,14 +14,12 @@ def encrypt(text, key):
     ciphertext = cipher.encrypt(pad(text.encode("utf-8"), AES.block_size))
     return cipher.iv + ciphertext
 
-
 def decrypt(ciphertext, key):
     """Decrypt ciphertext using AES."""
     iv = ciphertext[: AES.block_size]
     cipher = AES.new(key, AES.MODE_CBC, iv)
     decrypted = unpad(cipher.decrypt(ciphertext[AES.block_size :]), AES.block_size)
     return decrypted.decode("utf-8")
-
 
 # 1c. Create inverted index using word hashes
 def build_inverted_index(docs):
@@ -46,7 +30,6 @@ def build_inverted_index(docs):
             index[word_hash].append(doc_id)
     return index
 
-
 # Encrypt inverted index
 def encrypt_inverted_index(index, key):
     encrypted_index = {}
@@ -54,12 +37,10 @@ def encrypt_inverted_index(index, key):
         encrypted_index[word_hash] = encrypt(",".join(map(str, doc_ids)), key)
     return encrypted_index
 
-
 # Decrypt inverted index results
 def decrypt_inverted_index_results(encrypted_doc_ids, key):
     decrypted_doc_ids = decrypt(encrypted_doc_ids, key)
     return list(map(int, decrypted_doc_ids.split(",")))
-
 
 # 1d. Implement search function
 def search(query, encrypted_index, key, documents):
@@ -72,11 +53,19 @@ def search(query, encrypted_index, key, documents):
     else:
         return []
 
-
 # Main
 if __name__ == "__main__":
     # Generate AES key
     aes_key = get_aes_key()
+
+    # Input documents from user
+    documents = []
+    print("Enter documents (type 'done' to finish):")
+    while True:
+        doc = input("Enter document: ")
+        if doc.lower() == 'done':
+            break
+        documents.append(doc)
 
     # Build and encrypt inverted index
     inverted_index = build_inverted_index(documents)

@@ -1,5 +1,3 @@
-"""Paillier is partially homomorphic (PHE) as it can only perform addition on ciphertexts, not multiplication."""
-
 from Crypto.Util import number
 import random
 
@@ -29,31 +27,48 @@ def decrypt(private_key, public_key, ciphertext):
     message = (l * mu) % n
     return message
 
+def string_to_int(s):
+    """Convert a string to an integer by encoding it to bytes and interpreting the bytes as an integer."""
+    return int.from_bytes(s.encode(), 'big')
+
+def int_to_string(i):
+    """Convert an integer to a string by interpreting the integer as bytes and decoding the bytes."""
+    return i.to_bytes((i.bit_length() + 7) // 8, 'big').decode('utf-8')
+
 def main():
     # Generate key pair
     public_key, private_key = generate_keypair(bits=512)
 
-    # Encrypt integers
-    a = 15
-    b = 25
-    # a = int(input("Enter a: "))  # To take integers as input
-    # b = int(input("Enter b: "))  # To take integers as input
-    
+    # Take string inputs and convert to integers
+    str_a = input("Enter string a: ")
+    str_b = input("Enter string b: ")
+    a = string_to_int(str_a)
+    b = string_to_int(str_b)
+
+    # Encrypt the integers
     ciphertext_a = encrypt(public_key, a)
     ciphertext_b = encrypt(public_key, b)
 
-    # Perform additive homomorphic operation (add ciphertexts)
-    ciphertext_sum = (ciphertext_a * ciphertext_b) % (public_key[0] * public_key[0])
+    # Decrypt the ciphertexts
+    decrypted_a = decrypt(private_key, public_key, ciphertext_a)
+    decrypted_b = decrypt(private_key, public_key, ciphertext_b)
 
-    # Decrypt the result
-    decrypted_sum = decrypt(private_key, public_key, ciphertext_sum)
+    # Convert the decrypted integers back to strings
+    decrypted_str_a = int_to_string(decrypted_a)
+    decrypted_str_b = int_to_string(decrypted_b)
 
     # Print results
-    print(f"Ciphertext of a: {ciphertext_a}")
-    print(f"Ciphertext of b: {ciphertext_b}")
-    print(f"Ciphertext of a + b: {ciphertext_sum}")
-    print(f"Decrypted sum: {decrypted_sum}")
-    print(f"Expected sum: {a + b}")
+    print(f"Original string a: {str_a}")
+    print(f"Encrypted a: {ciphertext_a}")
+    print(f"Decrypted a: {decrypted_str_a}")
+
+    print(f"Original string b: {str_b}")
+    print(f"Encrypted b: {ciphertext_b}")
+    print(f"Decrypted b: {decrypted_str_b}")
 
 if __name__ == "__main__":
     main()
+
+# input_string = "string"
+# byte_string = input_string.encode('utf-8')
+# print(byte_string)

@@ -1,3 +1,5 @@
+"""RSA is partially homomorphic (PHE) as it can only perform multiplication on ciphertexts, not addition."""
+
 from Crypto.PublicKey import RSA
 from Crypto.Random import get_random_bytes
 from Crypto.Util.number import inverse
@@ -29,6 +31,8 @@ def main():
     # Encrypt integers
     a = 7
     b = 3
+    # a = int(input("Enter a: "))  # To take integers as input
+    # b = int(input("Enter b: "))  # To take integers as input
     ciphertext_a = encrypt(pub_key, a)
     ciphertext_b = encrypt(pub_key, b)
 

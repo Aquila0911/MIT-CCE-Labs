@@ -12,7 +12,9 @@ def start_client(server_host='127.0.0.1', server_port=65432):
 
     try:
         # Define the data to send
-        data = b"NICOLAS JACKKKKKSON"
+        # data = b"NICOLAS JACKKKKKSON"
+        input_string = "NICOLAS JACKKKKKSON"
+        data = input_string.encode('utf-8')
 
         # Compute hash of the data before sending
         expected_hash = compute_hash(data)
