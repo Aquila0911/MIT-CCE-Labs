@@ -1,0 +1,139 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             RESET, DATA, READONLY
+    2 00000000                 EXPORT           __Vectors
+    3 00000000         
+    4 00000000         __Vectors
+    5 00000000 10001000        DCD              0x10001000  ; stack pointer val
+                                                            ue
+    6 00000004 00000000        DCD              Reset_Handler ; reset vectors
+    7 00000008                 ALIGN
+    8 00000008                 AREA             mycode, CODE, READONLY
+    9 00000000                 ENTRY
+   10 00000000                 EXPORT           Reset_Handler
+   11 00000000         
+   12 00000000         Reset_Handler
+   13 00000000 4807            LDR              R0, =SRC
+   14 00000002 4908            LDR              R1, =DST
+   15 00000004 F04F 0208       MOV              R2, #8
+   16 00000008 6803            LDR              R3, [R0]
+   17 0000000A         
+   18 0000000A F003 040F 
+                       UP      AND              R4, R3, #0x0F
+   19 0000000E EA4F 1313       LSR              R3, R3, #4
+   20 00000012 F841 4B04       STR              R4, [R1], #4
+   21 00000016 1E52            SUBS             R2, R2, #1
+   22 00000018 D1F7            BNE              UP
+   23 0000001A         
+   24 0000001A         STOP
+   25 0000001A E7FE            B                STOP
+   26 0000001C         
+   27 0000001C 12345678 
+                       SRC     DCD              0x12345678
+   28 00000020 00000000 
+              00000000         AREA             mydata, DATA, READWRITE
+   29 00000000 00000000 
+                       DST     DCD              0
+   30 00000004                 END
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=q4.d -oq
+4.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\Inc\NXP\LP
+C17xx --predefine="__EVAL SETA 1" --list=q4.lst q4.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 1 in file q4.asm
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 4 in file q4.asm
+   Uses
+      At line 2 in file q4.asm
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 12 in file q4.asm
+   Uses
+      At line 6 in file q4.asm
+      At line 10 in file q4.asm
+
+SRC 0000001C
+
+Symbol: SRC
+   Definitions
+      At line 27 in file q4.asm
+   Uses
+      At line 13 in file q4.asm
+Comment: SRC used once
+STOP 0000001A
+
+Symbol: STOP
+   Definitions
+      At line 24 in file q4.asm
+   Uses
+      At line 25 in file q4.asm
+Comment: STOP used once
+UP 0000000A
+
+Symbol: UP
+   Definitions
+      At line 18 in file q4.asm
+   Uses
+      At line 22 in file q4.asm
+Comment: UP used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 8 in file q4.asm
+   Uses
+      None
+Comment: mycode unused
+5 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DST 00000000
+
+Symbol: DST
+   Definitions
+      At line 29 in file q4.asm
+   Uses
+      At line 14 in file q4.asm
+Comment: DST used once
+mydata 00000000
+
+Symbol: mydata
+   Definitions
+      At line 28 in file q4.asm
+   Uses
+      None
+Comment: mydata unused
+2 symbols
+342 symbols in table
