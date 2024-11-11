@@ -1,0 +1,14 @@
+# Ignore all files
+*
+
+# Do not ignore directories, so we can apply rules to their contents
+!*/
+
+# Do not ignore PDF files
+!*.pdf
+
+# Do not ignore C files
+!*.c
+
+# Do not ignore .gitignore file
+!.gitignore

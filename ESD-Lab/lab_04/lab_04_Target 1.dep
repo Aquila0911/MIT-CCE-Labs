@@ -1,2 +1,0 @@
-Dependencies for Project 'lab_04', Target 'Target 1': (DO NOT MODIFY !)
-F (.\q1-hex_to_ascii.asm)(0x66D60E45)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\NXP\LPC17xx --list "q1-hex_to_ascii.lst" --xref -o "q1-hex_to_ascii.o" --depend "q1-hex_to_ascii.d")
