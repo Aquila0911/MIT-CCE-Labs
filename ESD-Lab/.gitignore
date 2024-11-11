@@ -8,6 +8,9 @@
 !*.pdf
 
 # Do not ignore C files
+!*.asm
+
+# Do not ignore C files
 !*.c
 
 # Do not ignore .gitignore file
