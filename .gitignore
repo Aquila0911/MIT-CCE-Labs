@@ -1,0 +1,12 @@
+# Ignore all build and IDE files for Android projects
+MAD-Lab/*/*/*/.gradle
+MAD-Lab/*/*/*/.idea
+MAD-Lab/*/*/*/local.properties
+MAD-Lab/*/*/*/captures
+MAD-Lab/*/*/*/output.json
+MAD-Lab/*/*/*/build
+MAD-Lab/*/*/*/*.iml
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db

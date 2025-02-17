@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">FoodApp</string>
+    <string name="burger_5">Burger - $5</string>
+    <string name="pizza_8">Pizza - $8</string>
+    <string name="pasta_6">Pasta - $6</string>
+    <string name="salad_4">Salad - $4</string>
+    <string name="ice_cream_3">Ice Cream - $3</string>
+</resources>

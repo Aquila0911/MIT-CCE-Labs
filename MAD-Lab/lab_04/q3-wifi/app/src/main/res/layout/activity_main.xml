@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- ToggleButton for Wi-Fi and Mobile Data -->
+    <ToggleButton
+        android:id="@+id/toggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOn="Wi-Fi"
+        android:textOff="Mobile Data"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp" />
+
+    <!-- ImageView to display current mode image -->
+    <ImageView
+        android:id="@+id/imageViewMode"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@id/toggleButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+
+    <!-- Button to change mode -->
+    <Button
+        android:id="@+id/btnChangeMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change Mode"
+        android:layout_below="@id/imageViewMode"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+
+</RelativeLayout>

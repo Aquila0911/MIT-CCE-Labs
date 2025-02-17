@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/button_android_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Android 1.5 (Cupcake)" />
+
+    <Button
+        android:id="@+id/button_android_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Android 2.3 (Gingerbread)" />
+
+    <Button
+        android:id="@+id/button_android_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Android 4.0 (Ice Cream Sandwich)" />
+
+    <Button
+        android:id="@+id/button_android_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Android 5.0 (Lollipop)" />
+
+    <Button
+        android:id="@+id/button_android_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Android 6.0 (Marshmallow)" />
+
+    <Button
+        android:id="@+id/button_android_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Android 7.0 (Nougat)" />
+
+    <Button
+        android:id="@+id/button_android_7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Android 8.0 (Oreo)" />
+
+    <Button
+        android:id="@+id/button_android_8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Android 9.0 (Pie)" />
+
+    <Button
+        android:id="@+id/button_android_9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Android 10 (Q)" />
+
+    <Button
+        android:id="@+id/button_android_10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Android 11 (R)" />
+
+</LinearLayout>

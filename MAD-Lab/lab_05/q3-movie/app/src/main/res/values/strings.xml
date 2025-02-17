@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">MovieApp</string>
+    <string-array name="movie_names">
+        <item>Marvel 1</item>
+        <item>Marvel 2</item>
+        <item>Marvel 3</item>
+        <item>Marvel 4</item>
+    </string-array>
+    <string-array name="theater_names">
+        <item>Theater 1</item>
+        <item>Theater 2</item>
+        <item>Theater 3</item>
+        <item>Theater 4</item>
+    </string-array>
+</resources>

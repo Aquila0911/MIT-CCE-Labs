@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/menuex">
+
+    <!-- Contact Us (Icon in Action Bar) -->
+    <item
+        android:id="@+id/action_contact"
+        android:title="Contact Us"
+        android:icon="@drawable/contact"
+        app:showAsAction="always" />
+
+    <!-- About Us (Icon in Action Bar) -->
+    <item
+        android:id="@+id/action_about"
+        android:title="About Us"
+        android:icon="@drawable/about"
+        app:showAsAction="always" />
+
+    <!-- Homepage (Icon in Action Bar) -->
+    <item
+        android:id="@+id/action_home"
+        android:title="Homepage"
+        android:icon="@drawable/home"
+        app:showAsAction="always" />
+
+    <!-- WORKOUT MENU (Shows in Options Menu when clicking 3 dots) -->
+    <item
+        android:id="@+id/action_workout"
+        android:title="Workout Plans"
+        app:showAsAction="never" />
+
+    <!-- TRAINERS MENU -->
+    <item
+        android:id="@+id/action_trainers"
+        android:title="Trainers"
+        app:showAsAction="never" />
+
+    <!-- MEMBERSHIP MENU -->
+    <item
+        android:id="@+id/action_membership"
+        android:title="Membership"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_settings"
+        android:title="Settings"
+        app:showAsAction="never" >
+
+        <menu
+            android:id="@+id/submenu">
+            <item
+                android:id="@+id/one"
+                android:title="set1"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/two"
+                android:title="set2"
+                app:showAsAction="never" />
+        </menu>
+    </item>
+
+</menu>
